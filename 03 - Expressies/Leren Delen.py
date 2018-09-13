@@ -1,0 +1,1 @@
+print(str(21//6) = (int('met rest')) str(21 % 6))
