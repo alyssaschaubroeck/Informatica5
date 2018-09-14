@@ -1,1 +1,1 @@
-print(str(21//6) = (int('met rest')) str(21 % 6))
+print( '21/6 = ' + str(21//6) + ' met rest ' + str(21%6))
