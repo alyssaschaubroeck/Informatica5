@@ -12,6 +12,6 @@ print(randint(10,15))
 print(random())
 print(random())
 
-seed(1267)
+print(seed(1267))
 
 # random is niet echt random
