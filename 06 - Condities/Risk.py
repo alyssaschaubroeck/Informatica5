@@ -1,21 +1,22 @@
 verliezer = 'aanvaller verliest 1 leger, verdediger verliest 1 leger'
 
 #input
-dobbel_a1 = int(input('De eerste dobbelsteen van de aanvaller: '))
-dobbel_a2 = int(input('De tweede dobbelsteen van de aanvaller: '))
-dobbel_a3 = int(input('De derde dobbelsteen van de aanvaller: '))
-dobbel_v1 = int(input('De eerste dobbelesteen van de verdediger: '))
-dobbel_v2 = int(input('De tweede dobbelsteen van de verdediger: '))
+a = int(input('De eerste dobbelsteen van de aanvaller: '))
+b = int(input('De tweede dobbelsteen van de aanvaller: '))
+c = int(input('De derde dobbelsteen van de aanvaller: '))
+d = int(input('De eerste dobbelesteen van de verdediger: '))
+e = int(input('De tweede dobbelsteen van de verdediger: '))
+
+getal_2 = (a + b + c) - max(a, b, c) - min(a, b, c)
 
 #berekening
-if dobbel_a1 > dobbel_v1:
-    if dobbel_a2 > dobbel_v2:
+if max(a, b, c) > max(d, e):
+    if getal_2 > min(d, e):
         print('aanvaller verliest 0 legers, verdediger verliest 2 legers')
-    else:
+    elif getal_2 <= min(d, e):
         print(verliezer)
-elif dobbel_a1 < dobbel_v1:
-    if dobbel_a2 < dobbel_v2:
+elif max(a, b, c) <= max(d, e):
+    if getal_2 <= min(d, e):
         print('aanvaller verliest 2 legers, verdediger verliest 0 legers')
-    else:
+    elif getal_2 > min(d, e):
         print(verliezer)
-else: print(verliezer)
