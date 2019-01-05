@@ -13,7 +13,6 @@ while som < afstand and tijdstip < 100000:
     som += originele_som
     antw = tijdstip
 
-
 if som == afstand:
     antw = tijdstip
 
