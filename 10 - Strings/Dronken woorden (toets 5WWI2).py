@@ -7,12 +7,15 @@ def dronken_voeren(woord):
     nieuw_woord = woord[0]
 
     for i in range(1, len(woord)):
+        #even letter?
         if i % 2 == 0:
             nieuw_woord += woord[i].upper()
         #vorige letter sws even, maar kijken of klinker was
         #kijken of de laatste letter een hoofdletter was
+        #oneven en vorig(even) letter is hoofdletterklinker op einde nieuwe woord
         elif nieuw_woord[- 1] in 'AEIOU':
             nieuw_woord += woord[i].upper()
+        #oneven letter
         else:
             nieuw_woord += woord[i].lower()
 
