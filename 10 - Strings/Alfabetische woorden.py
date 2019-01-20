@@ -1,4 +1,4 @@
-def positie_laaste_ascii(tekst):
+def positie_laagste_ascii(tekst):
 
     p_laagste = 0
     ord_laagste = ord(tekst[0])
@@ -7,15 +7,17 @@ def positie_laaste_ascii(tekst):
 
         ord_huidige = ord(tekst[i])
 
-        if (ord_huidige < ord_laagste):
+        if ord_huidige < ord_laagste:
             p_laagste = i
             ord_laagste = ord_huidige
+
+    return p_laagste
 
 def sorteer(tekst):
     s_tekst = '' #het gesorteerd woord
 
     while len(tekst) > 0:
-        i = positie_laaste_ascii(tekst)
+        i = positie_laagste_ascii(tekst)
         s_tekst += tekst[i]
         tekst = tekst[:i] + tekst[i + 1:]
 
