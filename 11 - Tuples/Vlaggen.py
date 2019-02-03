@@ -1,7 +1,14 @@
 def vlag(richting, kleuren):
-    if richting == 'verticaal' and len(kleuren) == 3:
-        antw = kleuren[0] + ' | ' + kleuren[1] + ' | ' + kleuren[2]
-    elif richting == 'verticaal' and len(kleuren) == 2:
-        antw = kleuren[0] + ' | ' + kleuren[1]
-    elif richting == 'horizontaal' and len(kleuren) == 3:
-        antw = kleuren[0] + ''
+    antw = ''
+    for i in range(0, len(kleuren)):
+        if richting == 'verticaal':
+            antw += kleuren[i]
+            if i != len(kleuren) - 1:
+                antw += ' | '
+        elif richting == 'horizontaal':
+            antw += kleuren[i]
+            if i != len(kleuren) - 1:
+                antw += '\n' + '-' + '\n'
+    return antw
+
+print(vlag('horizontaal',('rood', 'wit', 'blauw')))
