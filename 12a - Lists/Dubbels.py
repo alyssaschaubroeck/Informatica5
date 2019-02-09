@@ -4,10 +4,9 @@ def dubbels(lijst):
 
     for item in lijst:
 
-        if lijst.count([item]) > 1 and item not in dubbel:
+        if lijst.count(item) > 1 and item not in dubbel:
 
             dubbel.append(item)
-            lijst = lijst.pop(item)
 
     return dubbel
 
