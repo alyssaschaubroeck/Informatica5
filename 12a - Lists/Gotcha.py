@@ -16,6 +16,9 @@ def ik_heb_gemoord(lijst, uitvoerder):
     return opdracht, lijst
 
 def ik_ben_vermoord(opdrachtenlijst, slachtoffer):
+    uitvoerder_nummer = opdrachtenlijst.index(slachtoffer) - 1
+    uitvoerder = opdrachtenlijst[uitvoerder_nummer]
+    opdracht, lijst = ik_heb_gemoord(opdrachtenlijst, uitvoerder)
+    return opdracht, lijst
 
-
-print(ik_heb_gemoord(['jan', 'piet', 'joris', 'korneel'],'joris'))
+print(ik_ben_vermoord(['jan'],'jan'))
