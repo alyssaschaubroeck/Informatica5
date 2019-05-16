@@ -31,6 +31,9 @@ while i < 10000:
 
     i *= 2
 
-plt.plot(n, t)
+plt.plot(n, t, '-ro')
+plt.title('insertion sort')
+plt.xlabel('N')
+plt.ylabel('t')
 plt.show()
 
