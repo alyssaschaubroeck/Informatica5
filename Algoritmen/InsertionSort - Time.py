@@ -18,22 +18,33 @@ def insertion_sort(a):
         a[i + 1] = key
     return a
 
-i, n, t = 10, [], []
+i, n, t_insertion, t_python = 10, [], [], []
 
-while i < 10000:
-    rij = genereer_rij(i)
+while i < 2000:
+    rij_1 = genereer_rij(i)
+    rij_2 = rij_1.copy()
+
+    # insertion sort testen
     start = time()
-    rij = insertion_sort(rij)
+    rij = insertion_sort(rij_1)
     stop = time()
+    t_insertion.append(stop - start)
+
+    # sorteerfunctie van python testen
+    start = time()
+    rij_2.sort()
+    stop = time()
+    t_python.append(stop - start)
 
     n.append(i)
-    t.append(stop-start)
+    i += 50
 
-    i *= 2
-
-plt.plot(n, t, '-ro')
-plt.title('insertion sort')
+plt.plot(n, t_insertion, '-b')
+plt.plot(n, t_python, '-r')
+plt.title('Tijdsmeting')
+plt.gca().legend(('insertion sort', 'python sort'))
 plt.xlabel('N')
 plt.ylabel('t')
+plt.gcf().canvas.set_window_title('Alyssa Schaubroeck')
 plt.show()
 
